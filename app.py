@@ -52,7 +52,7 @@ class Organizador():
     
 def main():
 
-    bot_token = "6747687387:AAGHUH7tBrY2ZETR8cLzCHK6DdE6yxqhglA"  # Substitua pelo token do seu bot
+    bot_token = ""  # Substitua pelo token do seu bot
 
     updater = Updater(bot_token, use_context=True)
     dispatcher = updater.dispatcher
