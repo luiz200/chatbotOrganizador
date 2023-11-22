@@ -22,13 +22,20 @@ class Organizador():
 
         text = update.message.text
         chat_id = update.message.chat_id
+
+        if not text:
+            update.massage.reply_text("Por favor, Digite pelo menos um nome.")
+            return "collecting_names"
+        
         nomes = [nome.strip() for nome in text.split(",")]
         context.user_data["nomes"] = nomes
         update.message.reply_text(f"Recebi os nomes: {', '.join(nomes)}")
 
-        return "collecting_names"
+        return "organizing_names"
     
-    def nomesOrganizados(self, update: Update, context: CallbackContext):
+    def organizing_names(self, update: Update, context: CallbackContext):
+
+        if "nomes" not in con
 
         nomes = context.user_data["nomes"]
         nomes.sort()
@@ -37,9 +44,15 @@ class Organizador():
         
         return ConversationHandler.END
     
+    def clearCache():
+
+
+
+        return "clearCache"
+    
 def main():
 
-    bot_token = "TOKEN_BOT"  # Substitua pelo token do seu bot
+    bot_token = "6747687387:AAGHUH7tBrY2ZETR8cLzCHK6DdE6yxqhglA"  # Substitua pelo token do seu bot
 
     updater = Updater(bot_token, use_context=True)
     dispatcher = updater.dispatcher
